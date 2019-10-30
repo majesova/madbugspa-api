@@ -1,6 +1,6 @@
 using AutoMapper;
 using MadBugAPI.Controllers.Dtos;
-using MadBugAPI.Entities;
+using MadBugAPI.Data.Entities;
 
 namespace MadBugAPI.Infrastructure.Mapping
 {

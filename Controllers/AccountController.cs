@@ -2,7 +2,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using MadBugAPI.Controllers.Dtos;
-using MadBugAPI.Entities;
+using MadBugAPI.Data.Entities;
 using MadBugAPI.Infrastructure.Authentication;
 using MadBugAPI.Infrastructure.ManagedResponses;
 using Microsoft.AspNetCore.Identity;

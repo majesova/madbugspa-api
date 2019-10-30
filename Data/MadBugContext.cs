@@ -1,5 +1,5 @@
 using IdentityServer4.EntityFramework.Options;
-using MadBugAPI.Entities;
+using MadBugAPI.Data.Entities;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;

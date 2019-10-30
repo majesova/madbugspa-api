@@ -4,7 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using AutoMapper;
 using MadBugAPI.Data;
-using MadBugAPI.Entities;
+using MadBugAPI.Data.Entities;
 using MadBugAPI.Infrastructure.Authentication;
 using MadBugAPI.Infrastructure.Mapping;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
