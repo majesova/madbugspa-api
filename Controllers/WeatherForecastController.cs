@@ -27,6 +27,7 @@ namespace MadBugAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         [ProducesResponseType(400, Type = typeof(IEnumerable<WeatherForecast>))]
         public IEnumerable<WeatherForecast> Get()
         {
