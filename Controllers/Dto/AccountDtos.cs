@@ -11,6 +11,7 @@ namespace MadBugAPI.Controllers.Dtos
         [Required]
         public string Email { get; set; }
         [Required]
+        [MaxLength(20)]
         public string Password { get; set; }
     }
     /// <summary>

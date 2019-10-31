@@ -5,6 +5,7 @@ using System.Text;
 using AutoMapper;
 using MadBugAPI.Data;
 using MadBugAPI.Data.Entities;
+using MadBugAPI.Data.Repositories;
 using MadBugAPI.Infrastructure.Authentication;
 using MadBugAPI.Infrastructure.Mapping;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -121,10 +122,11 @@ namespace MadBugAPI
 
             #region services registration
             services.AddSingleton(settings);
-
+            //Each request uses the same instance
             services.AddSingleton(mapper);
+            //Each request creates a new instance
+            services.AddScoped<BugRepository>();
 
-            
             #endregion
         }
 
