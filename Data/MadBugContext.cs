@@ -26,6 +26,7 @@ namespace MadBugAPI.Data
                 x.ToTable("Bug");
                 //User relationship
                 x.HasOne(x=>x.User).WithMany().HasForeignKey(x=>x.UserId);
+                x.HasOne(x=>x.ModifiedBy).WithMany().HasForeignKey(x=>x.ModifiedById);
             });
             
             base.OnModelCreating(builder);

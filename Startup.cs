@@ -126,7 +126,7 @@ namespace MadBugAPI
             services.AddSingleton(mapper);
             //Each request creates a new instance
             services.AddScoped<BugRepository>();
-
+            services.AddScoped<UserRepository>();
             #endregion
         }
 

@@ -61,6 +61,7 @@ namespace MadBugAPI.Controllers
                 var bug = _mapper.Map<Bug>(model);
                 //Send to save
                 bug.UserId = CurrentUserId(User as ClaimsPrincipal);
+                bug.CreatedAt = DateTime.Now;
                 //oops, where is the userId
                 _bugRepository.Insert(bug);
                 _context.SaveChanges();
@@ -82,9 +83,17 @@ namespace MadBugAPI.Controllers
             return Ok(bugsDtos);
         }
 
+        [HttpGet("user/{userId}")]
+        public IActionResult Get(string userId){
+            var bugs = _bugRepository.GetByUserId(userId);
+            var bugsDtos = _mapper.Map<List<BugResponseDto>>(bugs);
+            return Ok(bugsDtos);
+        }
+
         [HttpGet("{id}")]
         public IActionResult GetById(int id){
             var bug = _bugRepository.GetById(id);
+
             if(bug == null)
                 return NotFound();
             var bugDto = _mapper.Map<BugResponseDto>(bug);
@@ -108,11 +117,16 @@ namespace MadBugAPI.Controllers
                ModelState));
             }
             var bug = _mapper.Map<Bug>(model);
+            bug.ModifiedAt = DateTime.Now;
+            bug.ModifiedById =  CurrentUserId(User as ClaimsPrincipal);
             _bugRepository.Update(bug);
             _context.SaveChanges();
             var dto = _mapper.Map<BugResponseDto>(bug);
             return Ok(dto);
         }
+
+       
+
 
     }
 }

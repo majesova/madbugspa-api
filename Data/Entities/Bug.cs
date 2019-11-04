@@ -1,3 +1,5 @@
+using System;
+
 namespace MadBugAPI.Data.Entities
 {
     /// <summary>
@@ -12,8 +14,15 @@ namespace MadBugAPI.Data.Entities
         public string StepsToReproduce { get; set; }
         public string Title { get; set; }
         //User relation
-        public string UserId { get; set; }
+        public string UserId { get; set; } //Usuario que creó
         public AppUser User { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+        public DateTime? ModifiedAt { get; set; }
+
+        public string ModifiedById { get; set; }
+
+        public AppUser ModifiedBy  { get; set; }
         
     }
     /// <summary>

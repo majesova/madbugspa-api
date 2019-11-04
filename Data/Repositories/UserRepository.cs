@@ -1,12 +1,13 @@
+using System.Collections.Generic;
+using System.Linq;
+using MadBugAPI.Data.Entities;
+
 namespace MadBugAPI.Data.Repositories
 {
-    public class UserRepository
+    public class UserRepository : BaseRepository<AppUser>
     {
-        private MadBugContext _context;
-        public UserRepository(MadBugContext context)
+        public UserRepository(MadBugContext context):base(context)
         {
-            _context = context;
-        }
-        
+        }   
     }
 }

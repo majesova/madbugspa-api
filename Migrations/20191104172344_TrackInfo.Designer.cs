@@ -4,14 +4,16 @@ using MadBugAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MadBugAPI.Migrations
 {
     [DbContext(typeof(MadBugContext))]
-    partial class MadBugContextModelSnapshot : ModelSnapshot
+    [Migration("20191104172344_TrackInfo")]
+    partial class TrackInfo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

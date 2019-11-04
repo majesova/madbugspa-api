@@ -33,6 +33,7 @@ namespace MadBugAPI.Controllers.Dtos
         public string StepsToReproduce { get; set; }
         public string Title { get; set; }
         public string UserId { get; set; }
+         public DateTime CreatedAt { get; set; }
     }
 
     public class BugUpdateDto
@@ -56,6 +57,8 @@ namespace MadBugAPI.Controllers.Dtos
         [Required]
         public string Title { get; set; }
         public string UserId { get; set; }
+        [Required]
+         public DateTime? CreatedAt { get; set; }
 
     }
 
